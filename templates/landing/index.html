@@ -1,0 +1,1018 @@
+{% load static %}
+{% block head %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="{% static 'images/KuberDebt-logo1.png' %}">
+
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+
+    <title>KuberDebt</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Swiper.js -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/templatemo-first-portfolio-style.css' %}" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll("section[id]");
+            const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+            function activateMenuOnScroll() {
+                let scrollY = window.pageYOffset;
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute("id");
+
+                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove("active");
+                            if (link.getAttribute("href").includes(sectionId)) {
+                                link.classList.add("active");
+                            }
+                        });
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", activateMenuOnScroll);
+        });
+    </script>
+
+</head>
+
+{% endblock %}
+
+<body>
+
+  {% block navbar %}
+
+    <section class="preloader">
+        <div class="spinner">
+            <span class="spinner-rotate"></span>
+        </div>
+    </section>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            <a href="/" class="navbar-brand mx-auto mx-lg-0">
+              <img src="{% static 'images/KuberDebt-logo2.png' %}" class="avatar-image avatar-image-large img-fluid" alt="">
+              KuberDebt</a>
+
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-lg-5">
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_1">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_2">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#services">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_4">Testimonials</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/contact/">Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_faq">FAQs</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/blogs/">blogs</a>
+                    </li>
+                    
+
+
+                  <div class="d-flex align-items-center d-lg-none">
+                      <a href="https://wa.me/919243122770" target="_blank" class="d-flex align-items-center text-decoration-none">
+                        <div class="whatsapp-icon-bg me-2">
+                            <i class="bi bi-whatsapp text-white" style="font-size: 1.2rem;"></i>
+                        </div>
+                    </a>
+                      <a class="custom-btn btn" href="https://wa.me/919243122770" target="_blank">
+                              +91 92431-22770
+                          </a>
+                  </div>
+
+                </ul>
+
+                <div class="d-lg-flex align-items-center d-none ms-auto">
+                    <a href="https://wa.me/919243122770" target="_blank" class="d-flex align-items-center text-decoration-none">
+                        <div class="whatsapp-icon-bg me-2">
+                            <i class="bi bi-whatsapp text-white" style="font-size: 1.2rem;"></i>
+                        </div>
+                    </a>
+
+                    <span style="
+                  background: #535da1;
+                  border-radius: 100px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  padding: 8px 16px;
+                  font-size: 14px;
+                  border: 2px solid #ffffff;
+                  cursor: pointer;
+                  display: inline-block;
+                  text-decoration: none;
+                  transition: all 0.3s;
+                  white-space: nowrap;
+              " 
+              onmouseover="this.style.background='#434b83'; this.style.boxShadow='0 1rem 3rem rgba(0, 0, 0, 0.175)'; this.style.borderColor='transparent'" 
+              onmouseout="this.style.background='#535da1'; this.style.boxShadow='none'; this.style.borderColor='#ffffff'">
+                  +91 92431-22770
+              </span>
+
+                </div>
+        </div>
+    </div>
+</nav>
+
+    {% endblock %}
+
+    <main>
+
+      {% block hero %}
+        <section class="hero d-flex justify-content-center align-items-center" id="section_1">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-7 col-12">
+                        <div class="hero-text">
+ <h5 class="mb-4 section-title responsive-heading">
+    Begin your Debt-Free journey with KuberDebt !
+</h5>
+
+<style>
+.responsive-heading {
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+    background: var(--secondary-color);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+    border-radius: var(--border-radius-large);
+    display: inline-block;
+    padding: 8px 24px;
+    text-align: center;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .responsive-heading {
+        font-size: 30px;
+        padding: 10px 20px;
+        display: block;
+        margin: 0 auto;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .responsive-heading {
+        font-size: 28px;
+        padding: 8px 16px;
+    }
+}
+</style>
+                            <p class="mb-4"><a class="custom-btn btn custom-link" href="/contact/">Get Professional Help</a></p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-12 position-relative">
+                        <div class="hero-image-wrap"></div>
+                        <img src="{% static 'images/hero_image.png' %}" class="hero-image img-fluid" alt="">
+                    </div>
+
+                </div>
+            </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#535da1" fill-opacity="1" d="M0,160L24,160C48,160,96,160,144,138.7C192,117,240,75,288,64C336,53,384,75,432,106.7C480,139,528,181,576,208C624,235,672,245,720,240C768,235,816,213,864,186.7C912,160,960,128,1008,133.3C1056,139,1104,181,1152,202.7C1200,224,1248,224,1296,197.3C1344,171,1392,117,1416,90.7L1440,64L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"></path></svg>
+        </section>
+
+{% endblock %}
+
+{% block contant %}
+
+        <section class="about section-padding" id="section_2">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12">
+                        <img src="{% static 'images/about_image1.jpg' %}" class="about-image img-fluid" alt="">
+                    </div>
+
+
+                    <div class="col-lg-6 col-12 mt-5 mt-lg-0">
+                        <div class="about-thumb">
+
+                            <div class="section-title-wrap d-flex justify-content-end align-items-center mb-4">
+                                <h2 class="text-white me-4 mb-0">Our Story</h2>
+
+                                <img src="{% static 'images/happy-man.png' %}" class="avatar-image img-fluid" alt="">
+                            </div>
+
+
+                            <h3 class="pt-2 mb-3">How KuberDebt Began</h3>
+
+                            <p>KuberDebt was founded because we witnessed the suffering of individuals overwhelmed by financial hardship. Following crises like business losses, job loss, or medical emergency, they faced relentless harassment and threats, instead of support. We recognized this as a crisis of dignity and peace of mind.
+                            </p>
+
+                            <p>Debtors needed more than just advice—they needed powerful legal support to resolve the matter. Our mission became: To restore financial status and peace to the individual by amicably resolving disputes. 
+KuberDebt does not promote loan defaults but takes an initiative to resolve and settle the loans. Our service not only helps you settle existing debt but also provides a financial strategy to ensure you don't end up in this situation again.</p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+<section class="featured section-padding text-center">
+  <div class="container">
+    <!-- Section Heading -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8">
+        <h2 class="section-title" style="color: #0f0f0fff;">Our Achievements Speak for Themselves</h2>
+        <p class="section-subtitle">
+          Delivering financial freedom through trusted debt solutions for years.
+        </p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-12">
+        <div class="about-thumb py-4 px-3">
+          <div class="row text-center align-items-center">
+            
+            <div class="col-6 col-md-3 featured-border-bottom py-3">
+              <div class="stat">
+                <strong class="featured-numbers counter" data-target="5">0</strong><span class="unit">+</span>
+              </div>
+              <p class="featured-text">Years of Experience</p>
+            </div>
+
+            <div class="col-6 col-md-3 featured-border-start featured-border-bottom py-3">
+              <div class="stat">
+                <strong class="featured-numbers counter" data-target="4650">0</strong>
+              </div>
+              <p class="featured-text">Happy Customers</p>
+            </div>
+
+            <div class="col-6 col-md-3 pt-4">
+              <div class="stat">
+                <strong class="featured-numbers counter" data-target="3.4">0</strong><span class="unit"> Cr+</span>
+              </div>
+              <p class="featured-text">Loan Settled</p>
+            </div>
+
+            <div class="col-6 col-md-3 featured-border-start pt-4">
+              <div class="stat">
+                <strong class="featured-numbers counter" data-target="98">0</strong><span class="unit">%</span>
+              </div>
+              <p class="featured-text">Client Satisfaction</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %} <!-- How It Works Section (Card Layout) -->
+<section id="how-it-works" class="py-6" style="background:#f9f9f9;">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="mb-4 section-title" style="color: #1a1a1a;">How Our Anti-Harassment Shield Works</h2>
+        <p class="lead">Your 6-step journey to immediate relief from creditor harassment and lasting debt freedom</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Step 1 -->
+      <div class="col-lg-4 col-md-6 ">
+        <div class="how-card">
+          <img src="{% static 'images/process/step1.png' %}" class="avatar-image img-fluid" alt="Step 1">
+          <h4>Step 1: Enroll in Anti-Harassment Service</h4>
+          <p>Sign up for our specialized Anti-Harassment Shield protection to legally stop all harassing communication immediately.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="how-card">
+          <img src="{% static 'images/process/step2.png' %}" class="avatar-image img-fluid" alt="Step 2">
+          <h4>Step 2: Receive Your Unique Number</h4>
+          <p>Get your dedicated call forwarding number from KuberDebt that redirects all creditor calls to our legal team.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="how-card">
+          <img src="{% static 'images/process/step3.png' %}" class="avatar-image img-fluid" alt="Step 3">
+          <h4>Step 3: Set Up Call Forwarding</h4>
+          <p>Quickly configure call forwarding so all harassing calls automatically route to our experts.</p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="how-card">
+          <img src="{% static 'images/process/step4.png' %}" class="avatar-image img-fluid" alt="Step 4">
+          <h4>Step 4: Legal Intervention Begins</h4>
+          <p>Our lawyers intervene immediately, speaking directly to collection agents on your behalf and stopping harassment.</p>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="how-card">
+          <img src="{% static 'images/process/step5.png' %}" class="avatar-image img-fluid" alt="Step 5">
+          <h4>Step 5: Parallel Debt Resolution</h4>
+          <p>While our legal team handles creditors, our experts negotiate your debt settlements simultaneously.</p>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="how-card">
+          <img src="{% static 'images/process/step6.png' %}" class="avatar-image img-fluid" alt="Step 6">
+          <h4>Step 6: Regain Peace of Mind</h4>
+          <p>Experience immediate relief from harassment while we work toward your debt freedom and peace of mind.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="/services/" class="btn btn-primary px-4 py-2" style="border-radius:25px;">See More</a>
+    </div>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+  .how-card {
+    background: #fff;
+    border: 1px solid #e9eaeb;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  }
+
+  .how-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+
+  .how-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+  }
+
+  .how-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .how-card p {
+    color: var(--text-color);
+    font-size: 15px;
+  }
+
+  @media (max-width: 768px) {
+    .how-card {
+      margin-bottom: 20px;
+    }
+  }
+</style>
+ {% endcomment %}
+
+<style>
+    /* Services Cards Section */
+    .services-cards-section {
+        padding: 80px 0;
+        background: var(--white);
+    }
+    
+    .services-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .services-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+    .services-title {
+        color: var(--secondary-color);
+        font-size: 42px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+    
+    .services-subtitle {
+        color: var(--p-color);
+        font-size: 18px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+        margin-bottom: 50px;
+    }
+    
+    .service-card {
+        background: var(--white);
+        border-radius: 15px;
+        padding: 30px 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 2px solid var(--border-color);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        border-color: var(--primary-color);
+    }
+    
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 20px;
+        background: var(--light-bg);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .service-icon img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .service-card h3 {
+        color: var(--secondary-color);
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+    
+    .services-cta {
+        text-align: center;
+    }
+    
+    .see-more-btn {
+        display: inline-block;
+        background: var(--primary-color);
+        color: white;
+        padding: 14px 35px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 2px solid var(--primary-color);
+    }
+    
+    .see-more-btn:hover {
+        background: transparent;
+        color: var(--primary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 992px) {
+        .services-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .services-title {
+            font-size: 36px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .services-cards-section {
+            padding: 60px 0;
+        }
+        
+        .services-title {
+            font-size: 32px;
+        }
+        
+        .services-subtitle {
+            font-size: 16px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .services-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .service-card {
+            padding: 25px 15px;
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+        
+        .service-icon img {
+            width: 35px;
+            height: 35px;
+        }
+        
+        .service-card h3 {
+            font-size: 16px;
+        }
+        
+        .services-header {
+            margin-bottom: 40px;
+        }
+        
+        .services-title {
+            font-size: 28px;
+        }
+        
+        .see-more-btn {
+            padding: 12px 30px;
+            font-size: 15px;
+        }
+    }
+</style>
+
+<!-- Services Cards Section -->
+<section class="services-cards-section" id="services">
+    <div class="services-container">
+        <!-- Heading Section -->
+        <div class="services-header">
+            <h2 class="section-title" style="color: #0f0f0fff;">Our Financial Services</h2>
+            <p class="services-subtitle">Comprehensive debt solutions designed to help you regain financial freedom and peace of mind</p>
+        </div>
+        
+        <!-- Services Grid -->
+        <div class="services-grid">
+            <!-- Loan Settlement Card -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="{% static 'images/services/services-1.png' %}" alt="Loan Settlement" >
+                </div>
+                <h3>Loan Settlement</h3>
+            </div>
+            
+            <!-- Anti Harassment Services Card -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="{% static 'images/services/services-2.png' %}" alt="Anti Harassment Services">
+                </div>
+                <h3>Anti Harassment Services</h3>
+            </div>
+            
+            <!-- Debt Consolidation Card -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="{% static 'images/services/services-3.png' %}" alt="Debt Consolidation">
+                </div>
+                <h3>Debt Consolidation</h3>
+            </div>
+            
+            <!-- Loan Restructuring Card -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="{% static 'images/services/services-4.png' %}" alt="Loan Restructuring">
+                </div>
+                <h3>Loan Restructuring</h3>
+            </div>
+        </div>
+        
+        <!-- See More Button -->
+        <div class="services-cta">
+            <a href="/services/" class="see-more-btn">See More Services</a>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="testimonials section-padding" id="section_4">
+  <div class="container text-center">
+    <h3 class="mb-4 section-title" style="color: #1a1a1a;">What Our Clients Say</h3>
+    <p class="text-muted mb-5 section-subtitle">
+      Real experiences from people who found Financial Freedom with KuberDebt
+    </p>
+
+    <!-- Swiper Container -->
+    <div class="swiper testimonialSwiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="testimonial-card p-4 shadow-sm">
+            <img src="{% static 'images/clients/default333.jpg' %}" alt="Aarti Sharma" class="testimonial-image mb-3" />
+            <h5 class="client-name">Aarti Sharma</h5>
+            <p class="client-role">Mumbai</p>
+            <p class="testimonial-text">"Before KuberDebt, the collection calls were relentless—they were affecting my job and my mental health. The 'Anti-Harassment Shield' was activated on Day 1. The calls stopped immediately. That peace of mind alone was worth it. KuberDebt didn't just settle my loan; they restored my dignity."</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonial-card p-4 shadow-sm">
+            <img src="{% static 'images/clients/default333.jpg' %}" alt="Vivek Ranjan" class="testimonial-image mb-3" />
+            <h5 class="client-name">Vivek Ranjan</h5>
+            <p class="client-role">Bengaluru</p>
+            <p class="testimonial-text">"I was worried about the long-term credit damage. KuberDebt’s experts not only secured a significant waiver on my unsecured loan but immediately transitioned me into their Credit Rebuild Phase. I finally have a clear roadmap to repair my score and secure my financial future. Highly professional service."</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonial-card p-4 shadow-sm">
+            <img src="{% static 'images/clients/default333.jpg' %}" alt="Shailesh Kadam" class="testimonial-image mb-3" />
+            <h5 class="client-name">Shailesh Kadam</h5>
+            <p class="client-role">Pune</p>
+            <p class="testimonial-text">"My debt case was complex, involving multiple creditors and aggressive legal notices. KuberDebt treated it as a formal legal dispute, not just a negotiation. Their 'Dispute Expertise' secured a final, compliant settlement that was much lower than I ever expected. Truly, a professional resolution firm."</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonial-card p-4 shadow-sm">
+            <img src="{% static 'images/clients/default333.jpg' %}" alt="Shailesh Kadam" class="testimonial-image mb-3" />
+            <h5 class="client-name">Neha Goswami</h5>
+            <p class="client-role">Delhi</p>
+            <p class="testimonial-text">"Within 4 months of enrolling, KuberDebt presented the first settlement offer. The Resolution Roadmap is no joke—it's fast, efficient, and transparent. They accelerated the process and helped me close a stressful chapter of my life much quicker than I anticipated."</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonial-card p-4 shadow-sm">
+            <img src="{% static 'images/clients/default333.jpg' %}" alt="Shailesh Kadam" class="testimonial-image mb-3" />
+            <h5 class="client-name">Rohan Taneja</h5>
+            <p class="client-role">Hyderabad</p>
+            <p class="testimonial-text">"KuberDebt was the partner I needed during my crisis. They were empathetic, transparent about the process, and fought tirelessly to get the maximum waiver possible. They genuinely are 'the definitive choice for financial freedom.' My future is clear now."</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonial-card p-4 shadow-sm">
+            <img src="{% static 'images/clients/default333.jpg' %}" alt="Shailesh Kadam" class="testimonial-image mb-3" />
+            <h5 class="client-name">Suresh Reddy</h5>
+            <p class="client-role">Chennai</p>
+            <p class="testimonial-text">"I had almost given up hope. KuberDebt’s legal-backed strategy convinced the lender to accept a settlement that allowed me to save over 50% of the outstanding principal amount. They know the market, they know the law, and they know how to get results. A game-changer."</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonial-card p-4 shadow-sm">
+            <img src="{% static 'images/clients/default333.jpg' %}" alt="Shailesh Kadam" class="testimonial-image mb-3" />
+            <h5 class="client-name">Jasmine Kaur</h5>
+            <p class="client-role">Chandigarh</p>
+            <p class="testimonial-text">"I appreciated the 'Fees and Transparency' section on their website, which proved true throughout the entire process. No hidden costs, and they earned their fee only after the successful settlement. This integrity is what sets KuberDebt miles apart from other debt agencies."</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonial-card p-4 shadow-sm">
+            <img src="{% static 'images/clients/default333.jpg' %}" alt="Shailesh Kadam" class="testimonial-image mb-3" />
+            <h5 class="client-name">Deepak Malhotra</h5>
+            <p class="client-role">Ahmedabad</p>
+            <p class="testimonial-text">"KuberDebt helped me move 'Beyond Debt' and focus on 'Pure Potential.' They handled the creditors, the paperwork, and the pressure. I can now sleep soundly knowing my debt is resolved and I have the tools to rebuild my credit. Excellent service from start to finish."</p>
+          </div>
+        </div>
+        
+
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</section>
+
+
+<section id="section_faq" class="faq-section py-5" style="background: #f9fafc;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h3 class="section-title fw-bold" style="color: #1a1a1a;">Frequently Asked Questions (FAQs)</h3>
+      <p class="section-subtitle text-muted">
+        Answers to common questions about how KuberDebt helps you regain financial freedom.
+      </p>
+    </div>
+
+    <div class="accordion" id="faqAccordion">
+
+      <!-- Q1 -->
+      <div class="accordion-item shadow-sm border-0 mb-3 rounded-3">
+        <h2 class="accordion-header" id="faq1">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+            <i class="bi bi-question-circle me-2 text-primary"></i>
+            Why should I choose KuberDebt over negotiating my own loan settlement?
+          </button>
+        </h2>
+        <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            We are <strong>KuberDebt Dispute Resolution</strong>. We don't just negotiate; we employ a focused, legal-backed dispute and restructuring strategy. This shields you from aggressive tactics and aims for the maximum legal waiver possible, ensuring the resolution is final, fair, and compliant. We turn negotiation into a formal resolution process.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="accordion-item shadow-sm border-0 mb-3 rounded-3">
+        <h2 class="accordion-header" id="faq2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+            <i class="bi bi-question-circle me-2 text-primary"></i>
+            What types of debt does KuberDebt specialize in settling or restructuring?
+          </button>
+        </h2>
+        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Our expertise is focused on <strong>unsecured debt</strong>, including Credit Card dues, Personal Loans, and specific Business Loans. We specialize in managing complex cases and debts that have gone into default, using our dispute resolution background for stronger leverage.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="accordion-item shadow-sm border-0 mb-3 rounded-3">
+        <h2 class="accordion-header" id="faq3">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+            <i class="bi bi-question-circle me-2 text-primary"></i>
+            How long does the entire loan settlement process take with KuberDebt?
+          </button>
+        </h2>
+        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            While the exact timeline varies based on the lender and debt amount, our <strong>proactive Dispute Resolution process</strong> typically accelerates the timeline. We aim for the first credible settlement offers to be presented within <strong>90 days</strong>.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="accordion-item shadow-sm border-0 mb-3 rounded-3">
+        <h2 class="accordion-header" id="faq4">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+            <i class="bi bi-question-circle me-2 text-primary"></i>
+            Will settling my loan permanently destroy my credit score?
+          </button>
+        </h2>
+        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            No. While settling debt usually involves an initial negative impact, staying in default or ignoring the debt causes continuous, long-term damage. KuberDebt’s focus is on managing this short-term impact and immediately transitioning you to the <strong>Credit Rebuild Phase</strong> for a structured recovery plan.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="accordion-item shadow-sm border-0 mb-3 rounded-3">
+        <h2 class="accordion-header" id="faq5">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+            <i class="bi bi-question-circle me-2 text-primary"></i>
+            Does KuberDebt provide a post-settlement Credit Rebuilding plan?
+          </button>
+        </h2>
+        <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Absolutely. A successful settlement is only the first half of the journey. We equip every client with a proprietary, step-by-step <strong>credit recovery guide</strong>, focusing on strategic financial habits that maximize score recovery post-resolution.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="accordion-item shadow-sm border-0 mb-3 rounded-3">
+        <h2 class="accordion-header" id="faq6">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+            <i class="bi bi-question-circle me-2 text-primary"></i>
+            What makes KuberDebt the definitive choice for financial freedom?
+          </button>
+        </h2>
+        <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="faq6" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            KuberDebt offers three distinct differentiators:
+            <ul class="mt-2">
+              <li><strong>Dispute Expertise:</strong> We approach debt as a legal dispute, not just a negotiation.</li>
+              <li><strong>Anti-Harassment Shield:</strong> We prioritize your mental well-being and dignity from the outset.</li>
+              <li><strong>Structured Freedom:</strong> We ensure the settlement process concludes with a clear, actionable plan to rebuild your credit and achieve lasting financial freedom. We are your partner from financial hardship to complete financial freedom.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}
+    </main>
+
+
+{% block footer %}
+
+    <footer class="site-footer py-5">
+        <div class="container">
+            <div class="row align-items-center text-center text-md-start">
+
+                <!-- Brand Section -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h4 class="footer-brand mb-3"><img src="{% static 'images/KuberDebt-logo2.png' %}" class="avatar-image avatar-image-large img-fluid" alt="">KuberDebt</h4>
+                    <p class="footer-text">
+                        Empowering individuals to achieve financial freedom with confidence, integrity, and peace of mind.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="footer-heading mb-3">Quick Links</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#section_2">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#section_4">Testimonials</a></li>
+                        <li><a href="#section_5">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact / Social -->
+                <div class="col-lg-4 col-md-12">
+                    <h5 class="footer-heading mb-3">Connect With Us</h5>
+                    <p class="footer-contact mb-1"><i class="bi bi-telephone me-2"></i> +91 92431-22770</p>
+                    <p class="footer-contact"><i class="bi bi-envelope me-2"></i> info@kuberdebt.com</p>
+                    <p>Address - 569/3, 3rd Floor, Yeshwant Niwas Road , Indore, Madhya Pradesh (452003)</p>
+
+                    <div class="social-icons mt-3">
+                        <a href="https://www.instagram.com/p/DP1E5MlCEY0/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" ><i class="bi bi-facebook"></i></a>
+                        
+                        <a href="https://www.instagram.com/kuberdebt/" style="margin-left:10px" target="_blank"><i class="bi bi-instagram"></i></a>
+                        {% comment %} <a href="#"><i class="bi bi-linkedin"></i></a> {% endcomment %}
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="footer-divider my-4">
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0 small">
+                        © 2025 <strong>KuberDebt</strong>. All Rights Reserved. | Designed by
+                        <a href="https://keddytech.com" target="_blank" class="designer-link">Keddy Tech Solution</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+{% endblock %}
+
+    <!-- Floating Button -->
+<a href="/contact/" class="floating-btn">
+    Get Free Consultation
+</a>
+
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.sticky.js' %}"></script>
+    <script src="{% static 'js/click-scroll.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/magnific-popup-options.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+
+
+
+<script>
+  // Counter Animation
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200; 
+
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  };
+
+  // Animate when visible in viewport
+  // Add this code to trigger the animation when the counters come into view
+  const observerOptions = {
+    threshold: 0.5 // Trigger when 50% of the element is visible
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        observer.unobserve(entry.target); // Stop observing after animation starts
+      }
+    });
+  }, observerOptions);
+
+  // Observe the featured section
+  const featuredSection = document.querySelector('.featured');
+  if (featuredSection) {
+    observer.observe(featuredSection);
+  }
+
+  // Swiper initialization
+  var swiper = new Swiper(".testimonialSwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    loopedSlides: 8,
+    centeredSlides: true,
+    observer: true,
+    observeParents: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      0: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+  });
+</script>
+
+</body>
+
+</html>

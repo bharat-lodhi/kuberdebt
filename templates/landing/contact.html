@@ -1,0 +1,419 @@
+{% extends "landing/index.html" %}
+{% load static %}
+{% block hero %}{% endblock %}
+
+{% block navbar %}
+
+    <section class="preloader">
+        <div class="spinner">
+            <span class="spinner-rotate"></span>
+        </div>
+    </section>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            <a href="/" class="navbar-brand mx-auto mx-lg-0">
+              {% comment %} <img src="{% static 'images/KuberDebt-logo1.png' %}"  alt="" style="height:75px; width:70px;" > {% endcomment %}
+              <img src="{% static 'images/KuberDebt-logo2.png' %}" class="avatar-image avatar-image-large img-fluid" alt="">
+              KuberDebt</a>
+
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-lg-5">
+                    <li class="">
+                        <a class="nav-link click-scroll" href="/">Home</a>
+                    </li> 
+
+                    <li class="">
+                        <a class="nav-link click-scroll" href="/#section_2">About</a>
+                    </li>
+
+                    <li class="">
+                        <a class="nav-link click-scroll {% if '/services/' in request.path %}active{% endif %}" href="/services/">Services</a>
+                    </li>
+
+                    <li class="">
+                        <a class="nav-link click-scroll" href="/#section_4">Testimonials</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll active" href="/contact/">Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/#section_faq">FAQs</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/blogs/">blogs</a>
+                    </li>
+
+                 <div class="d-flex align-items-center d-lg-none">
+                      <a href="https://wa.me/919243122770" target="_blank" class="d-flex align-items-center text-decoration-none">
+                        <div class="whatsapp-icon-bg me-2">
+                            <i class="bi bi-whatsapp text-white" style="font-size: 1.2rem;"></i>
+                        </div>
+                    </a>
+                      <a class="custom-btn btn" href="https://wa.me/919243122770" target="_blank">
+                              +91 92431-22770
+                          </a>
+                  </div>
+
+                </ul>
+
+                <div class="d-lg-flex align-items-center d-none ms-auto">
+                    <a href="https://wa.me/919243122770" target="_blank" class="d-flex align-items-center text-decoration-none">
+                        <div class="whatsapp-icon-bg me-2">
+                            <i class="bi bi-whatsapp text-white" style="font-size: 1.2rem;"></i>
+                        </div>
+                    </a>
+                    <span style="
+                  background: #535da1;
+                  border-radius: 100px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  padding: 8px 16px;
+                  font-size: 14px;
+                  border: 2px solid #ffffff;
+                  cursor: pointer;
+                  display: inline-block;
+                  text-decoration: none;
+                  transition: all 0.3s;
+                  white-space: nowrap;
+              " 
+              onmouseover="this.style.background='#434b83'; this.style.boxShadow='0 1rem 3rem rgba(0, 0, 0, 0.175)'; this.style.borderColor='transparent'" 
+              onmouseout="this.style.background='#535da1'; this.style.boxShadow='none'; this.style.borderColor='#ffffff'">
+                  +91 92431-22770
+              </span>
+                </div>
+
+
+            </div>
+
+        </div>
+    </nav>
+
+    {% endblock %}
+
+
+{% block contant %}
+    <style>
+        /* Custom Variables */
+        
+         :root {
+            --primary-color: #535da1;
+            --secondary-color: #171d24;
+            --accent-color: #535da1;
+            --text-color: #4c5267;
+            --light-bg: #f4f5f6;
+            --white: #ffffff;
+            --dark-bg: #131417;
+            --border-color: #e9eaeb;
+        }
+        
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        /* Navigation */
+        
+                
+
+      
+        /* Form Section */
+        
+        .form-section {
+            background: var(--primary-color);
+            padding: 80px 0;
+        }
+        
+        .form-container {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-control {
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease;
+        }
+        textarea.form-control {
+                resize: vertical;
+                min-height: 120px;
+            }
+
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: none;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+        }
+        
+        .submit-btn {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 12px 40px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        /* Benefits Section */
+        
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .benefit-card {
+            background: var(--light-bg);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            height: 100%;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            background: var(--white);
+        }
+        
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .benefit-icon i {
+            color: var(--white);
+            font-size: 30px;
+        }
+        
+        .benefit-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+              /* Responsive Design */
+        
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 36px;
+            }
+            .timeline-container::before {
+                left: 20px;
+            }
+            .timeline-step {
+                flex-direction: row !important;
+                margin-left: 50px;
+            }
+            .timeline-step:nth-child(even) {
+                flex-direction: row;
+            }
+            .timeline-content,
+            .timeline-image {
+                width: 100%;
+            }
+            .timeline-image {
+                text-align: left;
+                margin-bottom: 20px;
+            }
+            .timeline-dot {
+                left: 20px;
+            }
+            .timeline-progress {
+                left: 20px;
+            }
+        }
+    </style>
+
+<!-- Contact Form Section -->
+
+
+
+<section id="contact" class="form-section">
+
+
+
+    <div class="container">
+
+{% if messages %}
+<div style="max-width: 400px; margin: 1rem auto; display: flex; flex-direction: column; gap: 0.5rem;">
+    {% for message in messages %}
+    <div style="
+        padding: 12px;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: bold;
+        background-color: #ffffff;
+        border: 1px solid rgba(0,0,0,0.05);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        {% if message.tags == 'success' %}color: #16a34a;{% elif message.tags == 'error' %}color: #dc2626;{% else %}color: #374151;{% endif %}
+    ">
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="text-center mb-5">
+                </div>
+                <div class="form-container">
+                    <h4 align="center">Secure Your Financial Freedom</h4>
+                    <p class="lead" align="center">Get Free Consultation & Instant Protection</p>
+
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Full Name *</label>
+                                    <input type="text" name="full_name" class="form-control" placeholder="Enter your full name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Phone Number *</label>
+                                    <input type="tel" name="phone_number" class="form-control" placeholder="Enter your phone number" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Email Address *</label>
+                                    <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Total Loan Amount</label>
+                                    <input type="text" name="total_loan_amount" class="form-control" placeholder="Approximate total loan amount">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Type of Loan</label>
+                                    <select name="loan_type" class="form-control">
+                                        <option value="">Select loan type</option>
+                                        <option value="secured">Secured Loan</option>
+                                        <option value="unsecured">Unsecured Loan</option>
+                                        <option value="both">Both Secured & Unsecured</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Any Legal Notice Received? *</label>
+                                    <select name="legal_notice" class="form-control" required>
+                                        <option value="">Select option</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Preferred Consultation Timing</label>
+                                    <input type="text" name="preferred_timing" class="form-control" placeholder="Enter time or date">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">City</label>
+                                    <input type="text" name="city" class="form-control" placeholder="Enter your city">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label">Explain your Problem</label>
+                                    <textarea name="problem_description" class="form-control" rows="4" placeholder="Briefly explain your loan issue or concern"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="submit-btn">Submit</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <script>
+        // Timeline Animation
+        document.addEventListener("DOMContentLoaded", function() {
+            const steps = document.querySelectorAll(".timeline-step");
+            const progress = document.querySelector(".timeline-progress");
+
+            function checkSteps() {
+                let maxVisibleIndex = -1;
+                steps.forEach((step, index) => {
+                    const rect = step.getBoundingClientRect();
+                    if (rect.top < window.innerHeight * 0.75) {
+                        step.classList.add("show");
+                        maxVisibleIndex = index;
+                    }
+                });
+                progress.style.height = (maxVisibleIndex + 1) / steps.length * 100 + "%";
+            }
+
+            window.addEventListener("scroll", checkSteps);
+            checkSteps();
+
+            // Form Submission
+            document.getElementById('debt-help-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you! Our legal expert will contact you shortly to activate your Anti-Harassment Shield.');
+                this.reset();
+            });
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,914 @@
+{% extends "landing/index.html" %}
+{% load static %}
+{% block hero %}{% endblock %}
+
+
+  {% block navbar %}
+
+    <section class="preloader">
+        <div class="spinner">
+            <span class="spinner-rotate"></span>
+        </div>
+    </section>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            <a href="/" class="navbar-brand mx-auto mx-lg-0">
+              {% comment %} <img src="{% static 'images/KuberDebt-logo1.png' %}"  alt="" style="height:75px; width:70px;" > {% endcomment %}
+              <img src="{% static 'images/KuberDebt-logo2.png' %}" class="avatar-image avatar-image-large img-fluid" alt="">
+              KuberDebt</a>
+
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-lg-5">
+                    <li>
+                        <a class="nav-link click-scroll" href="/">Home</a>
+                    </li> 
+
+                    <li>
+                        <a class="nav-link click-scroll" href="/#section_2">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll active" href="/services/">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/#section_4">Testimonials</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/contact/">Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/#section_faq">FAQs</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/blogs/">blog</a>
+                    </li>
+
+                    <div class="d-flex align-items-center d-lg-none">
+                      <a href="https://wa.me/919243122770" target="_blank" class="d-flex align-items-center text-decoration-none">
+                        <div class="whatsapp-icon-bg me-2">
+                            <i class="bi bi-whatsapp text-white" style="font-size: 1.2rem;"></i>
+                        </div>
+                    </a>
+                      <a class="custom-btn btn" href="https://wa.me/919243122770" target="_blank">
+                              +91 92431-22770
+                          </a>
+                  </div>
+
+                </ul>
+
+                <div class="d-lg-flex align-items-center d-none ms-auto">
+                    <a href="https://wa.me/919243122770" target="_blank" class="d-flex align-items-center text-decoration-none">
+                        <div class="whatsapp-icon-bg me-2">
+                            <i class="bi bi-whatsapp text-white" style="font-size: 1.2rem;"></i>
+                        </div>
+                    </a>
+                    <span style="
+                  background: #535da1;
+                  border-radius: 100px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  padding: 8px 16px;
+                  font-size: 14px;
+                  border: 2px solid #ffffff;
+                  cursor: pointer;
+                  display: inline-block;
+                  text-decoration: none;
+                  transition: all 0.3s;
+                  white-space: nowrap;
+              " 
+              onmouseover="this.style.background='#434b83'; this.style.boxShadow='0 1rem 3rem rgba(0, 0, 0, 0.175)'; this.style.borderColor='transparent'" 
+              onmouseout="this.style.background='#535da1'; this.style.boxShadow='none'; this.style.borderColor='#ffffff'">
+                  +91 92431-22770
+              </span>
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+
+    {% endblock %}
+
+
+{% block contant %}
+
+    <style>
+        /* Custom Variables */
+        
+         :root {
+            --primary-color: #535da1;
+            --secondary-color: #171d24;
+            --accent-color: #535da1;
+            --text-color: #4c5267;
+            --light-bg: #f4f5f6;
+            --white: #ffffff;
+            --dark-bg: #131417;
+            --border-color: #e9eaeb;
+        }
+        
+        
+        h1,
+        {% comment %} h2, {% endcomment %}
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        /* Navigation */
+        
+                
+
+        /* Hero Section */
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: var(--white);
+            padding: 120px 0 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section h1 {
+            color: var(--white);
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-section .lead {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        /* Timeline Section */
+        
+        .timeline-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 40px 0;
+        }
+        
+        .timeline-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: var(--light-bg);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-progress {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 0;
+            background: var(--accent-color);
+            transform: translateX(-50%);
+            transition: height 0.3s ease-out;
+        }
+        
+        .timeline-step {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            margin: 60px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .timeline-step.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-content {
+            width: 45%;
+            padding: 30px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+        
+        .timeline-content img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .timeline-image {
+            width: 45%;
+            text-align: center;
+        }
+        
+        .timeline-image h3 {
+            color: var(--accent-color);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: var(--white);
+            border: 4px solid var(--accent-color);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+        /* Form Section */
+        
+        .form-section {
+            background: var(--light-bg);
+            padding: 80px 0;
+        }
+        
+        .form-container {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-control {
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease;
+        }
+
+        textarea.form-control {
+                resize: vertical;
+                min-height: 120px;
+            }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: none;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+        }
+        
+        .submit-btn {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 12px 40px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        /* Benefits Section */
+        
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .benefit-card {
+            background: var(--light-bg);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            height: 100%;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            background: var(--white);
+        }
+        
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .benefit-icon i {
+            color: var(--white);
+            font-size: 30px;
+        }
+        
+        .benefit-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        /* Footer */
+        
+        .footer {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer h5 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+        
+        .footer a {
+            color: var(--light-bg);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 36px;
+            }
+            .timeline-container::before {
+                left: 20px;
+            }
+            .timeline-step {
+                flex-direction: row !important;
+                margin-left: 50px;
+            }
+            .timeline-step:nth-child(even) {
+                flex-direction: row;
+            }
+            .timeline-content,
+            .timeline-image {
+                width: 100%;
+            }
+            .timeline-image {
+                text-align: left;
+                margin-bottom: 20px;
+            }
+            .timeline-dot {
+                left: 20px;
+            }
+            .timeline-progress {
+                left: 20px;
+            }
+        }
+
+
+        /* Services Cards Section */
+.services-cards-section {
+    padding: 60px 0;
+    background: var(--white);
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.service-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary-color);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: var(--light-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.service-card h3 {
+    color: var(--secondary-color);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .service-card {
+        padding: 25px 15px;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+    }
+    
+    .service-icon img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .service-card h3 {
+        font-size: 16px;
+    }
+}
+    </style>
+    <!-- Hero Section -->
+    <section class="hero-section">
+
+            {% if messages %}
+            <div style="max-width: 400px; margin: 1rem auto; display: flex; flex-direction: column; gap: 0.5rem;">
+                {% for message in messages %}
+                <div style="
+                    padding: 12px;
+                    border-radius: 8px;
+                    text-align: center;
+                    font-weight: bold;
+                    background-color: #ffffff;
+                    border: 1px solid rgba(0,0,0,0.05);
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+                    {% if message.tags == 'success' %}color: #16a34a;{% elif message.tags == 'error' %}color: #dc2626;{% else %}color: #374151;{% endif %}
+                ">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center" style="margin-top:20px">
+                    <h2 class="section-title" style="color:white">Our Expert Financial Services</h2>
+                    {% comment %} <p class="lead" style="color:#fff">KuberDebt's professional legal system stops all harassing communication from banks and collection agents - legally and effectively</p> {% endcomment %}
+                    <p style="color:#fff; margin-bottom:30px;">Empowering you to take control of your debt with reliable and legal financial solutions</p>
+                    {% comment %} <a href="#how-it-works" class="custom-btn">Discover How It Works</a> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Cards Section -->
+<section class="services-cards-section">
+    <div class="services-container">
+        <div class="services-grid">
+            <!-- Loan Settlement Card -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="{% static 'images/services/services-1.png' %}" alt="Loan Settlement">
+                </div>
+                <h3>Loan Settlement</h3>
+            </div>
+            
+            <!-- Anti Harassment Services Card -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="{% static 'images/services/services-2.png' %}" alt="Anti Harassment Services">
+                </div>
+                <h3>Anti Harassment Services</h3>
+            </div>
+            
+            <!-- Debt Consolidation Card -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="{% static 'images/services/services-3.png' %}" alt="Debt Consolidation">
+                </div>
+                <h3>Debt Consolidation</h3>
+            </div>
+            
+            <!-- Loan Restructuring Card -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="{% static 'images/services/services-4.png' %}" alt="Loan Restructuring">
+                </div>
+                <h3>Loan Restructuring</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title">How Our Anti-Harassment Shield Works</h2>
+                    <p class="lead">Your 6-step journey to immediate relief from creditor harassment and lasting debt freedom</p>
+                </div>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-progress"></div>
+
+                <!-- Step 1 -->
+                <div class="timeline-step">
+                    <div class="timeline-image">
+                        <h3>Step 1</h3>
+                    </div>
+                    <div class="timeline-content">
+                        <img src="{% static 'images/process/step1.png' %}" alt="Enroll in Anti-Harassment Service">
+                        <h3>Enroll in Anti-Harassment Service</h3>
+                        <p>Sign up for our specialized Anti-Harassment Shield protection to legally stop all harassing communication immediately.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="timeline-step">
+                    <div class="timeline-image">
+                        <h3>Step 2</h3>
+                    </div>
+                    <div class="timeline-content">
+                        <img src="{% static 'images/process/step2.png' %}" alt="Receive Your Unique Number">
+                        <h3>Receive Your Unique Number</h3>
+                        <p>Get your dedicated call forwarding number from KuberDebt that redirects all creditor calls to our legal team.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="timeline-step">
+                    <div class="timeline-image">
+                        <h3>Step 3</h3>
+                    </div>
+                    <div class="timeline-content">
+                        <img src="{% static 'images/process/step3.png' %}" alt="Set Up Call Forwarding">
+                        <h3>Set Up Call Forwarding</h3>
+                        <p>Quickly configure call forwarding on your phone - all harassing calls automatically route to our experts.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="timeline-step">
+                    <div class="timeline-image">
+                        <h3>Step 4</h3>
+                    </div>
+                    <div class="timeline-content">
+                        <img src="{% static 'images/process/step4.png' %}" alt="Legal Intervention">
+                        <h3>Legal Intervention Begins</h3>
+                        <p>Our lawyers intervene immediately, speaking directly to collection agents on your behalf and stopping harassment at the moment.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="timeline-step">
+                    <div class="timeline-image">
+                        <h3>Step 5</h3>
+                    </div>
+                    <div class="timeline-content">
+                        <img src="{% static 'images/process/step5.png' %}" alt="Debt Resolution">
+                        <h3>Parallel Debt Resolution</h3>
+                        <p>While our Experts handles creditor communication, our Lawyers work simultaneously to negotiate for your loan settlement</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="timeline-step">
+                    <div class="timeline-image">
+                        <h3>Step 6</h3>
+                    </div>
+                    <div class="timeline-content">
+                        <img src="{% static 'images/process/step6.png' %}" alt="Peace of Mind">
+                        <h3>Regain Peace of Mind</h3>
+                        <p>Experience immediate relief from harassment while we work toward your complete debt freedom and financial peace.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title">How to process with KuberDebt for Loan Settlement?</h2>
+                </div>
+            </div>
+            <div class="row g-4">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon timeline-content">
+                            <img src="{% static 'images/benifits/benifits-1.png' %}" alt="#" >
+                        </div>
+                        <h4>Get Your Free Consultation</h4>
+                        <p>Speak with a financial consultant and explore your path to becoming debt-free</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon timeline-content">
+                            <img src="{% static 'images/benifits/benifits-2.png' %}" alt="#" >
+                        </div>
+                        <h4>Enroll with Us </h4>
+                        <p>Enroll today to get professional support and start your financial freedom by settling loan</p>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon timeline-content">
+                            <img src="{% static 'images/benifits/benifits-3.png' %}" alt="#" >
+                        </div>
+                        <h4>Save for Loan Settlement</h4>
+                        <p>Smart savings today mean quicker loan resolution tomorrow</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon timeline-content">
+                            <img src="{% static 'images/benifits/benifits-7.png' %}" alt="#" >
+                        </div>
+                        <h4>Negotiate and Closure of Loan</h4>
+                        <p>We talk to your lenders and close your loan, so you can breathe easy</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon timeline-content">
+                            <img src="{% static 'images/benifits/benifits-4.png' %}" alt="#" >
+                        </div>
+                        <h4>Credit Score</h4>
+                        <p>Improve your credit health while resolving existing debts</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon timeline-content">
+                            <img src="{% static 'images/benifits/benifits-5.png' %}" alt="#" >
+                        </div>
+                        <h4>100% Refundable Policy</h4>
+                        <p>KuberDebt is the only company to offer a refundable policy. If we fail to settle your debt, you receive your entire fee back, plus 2% interest on the fees you paid us</p>
+                    </div>
+                </div>
+                
+               
+                {% comment %} <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon timeline-content">
+                            <img src="{% static 'images/benifits/benifits-6.png' %}" alt="#" >
+                        </div>
+                        <h4>Immediate Harassment Protection</h4>
+                        <p>Stop harassing calls and aggressive communication from banks and collection agents from day one</p>
+                    </div>
+                </div>  {% endcomment %}
+
+                {% comment %} 
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h4>Professional Boundary</h4>
+                        <p>We establish a legal boundary between you and creditors, ensuring your peace of mind</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Stress-Free Resolution</h4>
+                        <p>Focus on your life while our team handles the stressful debt resolution process</p>
+                    </div>
+                </div> {% endcomment %}
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+<section id="contact" class="form-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="text-center mb-5">
+                </div>
+                <div class="form-container">
+                    <h4 align="center">Secure Your Financial Freedom</h4>
+                    <p class="lead" align="center">Get Free Consultation & Instant Protection</p>
+
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Full Name *</label>
+                                    <input type="text" name="full_name" class="form-control" placeholder="Enter your full name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Phone Number *</label>
+                                    <input type="tel" name="phone_number" class="form-control" placeholder="Enter your phone number" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Email Address *</label>
+                                    <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Total Loan Amount</label>
+                                    <input type="text" name="total_loan_amount" class="form-control" placeholder="Approximate total loan amount">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Type of Loan</label>
+                                    <select name="loan_type" class="form-control">
+                                        <option value="">Select loan type</option>
+                                        <option value="secured">Secured Loan</option>
+                                        <option value="unsecured">Unsecured Loan</option>
+                                        <option value="both">Both Secured & Unsecured</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Any Legal Notice Received? *</label>
+                                    <select name="legal_notice" class="form-control" required>
+                                        <option value="">Select option</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Preferred Consultation Timing</label>
+                                    <input type="text" name="preferred_timing" class="form-control" placeholder="Enter time or date">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">City</label>
+                                    <input type="text" name="city" class="form-control" placeholder="Enter your city">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label">Explain your Problem</label>
+                                    <textarea name="problem_description" class="form-control" rows="4" placeholder="Briefly explain your loan issue or concern"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="submit-btn">Submit</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <script>
+        // Timeline Animation
+        document.addEventListener("DOMContentLoaded", function() {
+            const steps = document.querySelectorAll(".timeline-step");
+            const progress = document.querySelector(".timeline-progress");
+
+            function checkSteps() {
+                let maxVisibleIndex = -1;
+                steps.forEach((step, index) => {
+                    const rect = step.getBoundingClientRect();
+                    if (rect.top < window.innerHeight * 0.75) {
+                        step.classList.add("show");
+                        maxVisibleIndex = index;
+                    }
+                });
+                progress.style.height = (maxVisibleIndex + 1) / steps.length * 100 + "%";
+            }
+
+            window.addEventListener("scroll", checkSteps);
+            checkSteps();
+
+            // Form Submission
+            document.getElementById('debt-help-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you! Our legal expert will contact you shortly to activate your Anti-Harassment Shield.');
+                this.reset();
+            });
+        });
+    </script>
+{% endblock %}

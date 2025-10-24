@@ -1,0 +1,229 @@
+{% extends "adminapp/dashboard.html" %}
+
+{% block content %}
+<div class="content-area">
+  <div class="container-fluid">
+    <!-- Page Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="mb-0">Create New Blog</h2>
+      <a href="{% url 'blogs' %}" class="btn btn-outline-secondary">
+        <i class="fas fa-arrow-left me-2"></i>Back
+      </a>
+    </div>
+
+    <!-- Blog Creation Form -->
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <form id="blogForm" enctype="multipart/form-data" method="POST">
+          {% csrf_token %}
+          
+          <div class="row">
+            <!-- Main Content -->
+            <div class="col-lg-8">
+              <!-- Blog Title -->
+              <div class="mb-4">
+                <label for="blogTitle" class="form-label fw-bold">Blog Title <span class="text-danger">*</span></label>
+                <input type="text" class="form-control form-control-lg" id="blogTitle" name="blog_title" placeholder="Enter blog title" required>
+              </div>
+
+              <!-- Blog Subtitle -->
+              <div class="mb-4">
+                <label for="blogSubtitle" class="form-label fw-bold">Blog Subtitle<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="blogSubtitle" name="blog_subtitle" placeholder="Enter blog subtitle" required>
+              </div>
+
+              <!-- Full Description with CKEditor -->
+              <div class="mb-4">
+                <label for="blogDescription" class="form-label fw-bold">Full Description <span class="text-danger">*</span></label>
+                <textarea id="blogDescription" name="blog_description" class="form-control" placeholder="Write your blog content here..." required></textarea>
+              </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+              <!-- Author Name -->
+              <div class="card mb-4">
+                <div class="card-header bg-light">
+                  <h6 class="mb-0">Author Information</h6>
+                </div>
+                <div class="card-body">
+                  <div class="mb-3">
+                    <label for="authorName" class="form-label">Author Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="authorName" name="author_name" placeholder="Enter author name" required>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Featured Image -->
+              <div class="card mb-4">
+                <div class="card-header bg-light">
+                  <h6 class="mb-0">Featured Image</h6>
+                </div>
+                <div class="card-body">
+                  <div class="mb-3">
+                    <label for="blogImage" class="form-label">Upload Image</label>
+                    <input type="file" class="form-control" id="blogImage" name="blog_image" accept="image/*">
+                  </div>
+                  
+                  <!-- Image Preview -->
+                  <div id="imagePreview" class="text-center mt-3" style="display: none;">
+                    <img id="preview" class="img-fluid rounded" style="max-height: 200px;" alt="Image preview">
+                    <button type="button" class="btn btn-sm btn-danger mt-2" onclick="removeImage()">
+                      <i class="fas fa-times me-1"></i>Remove Image
+                    </button>
+                  </div>
+                  
+                  <div class="form-text">
+                    Recommended size: 1200x630 pixels<br>
+                    Supported formats: JPG, PNG, GIF
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Actions -->
+          <div class="row mt-4">
+            <div class="col-12">
+              <div class="d-flex gap-2 justify-content-end">
+                <button type="reset" class="btn btn-outline-secondary">
+                  <i class="fas fa-redo me-2"></i>Reset Form
+                </button>
+                <button type="submit" class="btn btn-primary">
+                  <i class="fas fa-paper-plane me-2"></i>Publish Blog
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CKEditor CDN -->
+<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+
+<style>
+  .content-area {
+    padding: 2rem;
+  }
+  
+  .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .card-header {
+    border-bottom: 1px solid #e9ecef;
+    font-weight: 600;
+  }
+  
+  .form-label {
+    font-weight: 500;
+    color: #495057;
+  }
+  
+  .form-control, .form-select {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+  }
+  
+  .form-control:focus, .form-select:focus {
+    border-color: #535da1;
+    box-shadow: 0 0 0 0.2rem rgba(83, 93, 161, 0.25);
+  }
+  
+  .btn {
+    border-radius: 8px;
+    font-weight: 500;
+  }
+  
+  .btn-primary {
+    background-color: #535da1;
+    border-color: #535da1;
+  }
+  
+  .btn-primary:hover {
+    background-color: #454d8a;
+    border-color: #454d8a;
+  }
+  
+  /* CKEditor Customization */
+  .cke_chrome {
+    border-radius: 8px !important;
+    border: 1px solid #ddd !important;
+  }
+  
+  @media (max-width: 768px) {
+    .content-area {
+      padding: 1rem;
+    }
+    
+    .d-flex.gap-2 {
+      flex-direction: column;
+    }
+    
+    .btn {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+  }
+</style>
+
+<script>
+  // Initialize CKEditor
+  CKEDITOR.replace('blogDescription', {
+    toolbar: [
+      { name: 'document', items: ['Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates'] },
+      { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'] },
+      { name: 'editing', items: ['Find', 'Replace', '-', 'SelectAll', '-', 'Scayt'] },
+      { name: 'forms', items: ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'] },
+      '/',
+      { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat'] },
+      { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl'] },
+      { name: 'links', items: ['Link', 'Unlink', 'Anchor'] },
+      { name: 'insert', items: ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe'] },
+      '/',
+      { name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize'] },
+      { name: 'colors', items: ['TextColor', 'BGColor'] },
+      { name: 'tools', items: ['Maximize', 'ShowBlocks'] }
+    ],
+    height: 150
+  });
+
+  // Image preview functionality
+  document.getElementById('blogImage').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('preview').src = e.target.result;
+        document.getElementById('imagePreview').style.display = 'block';
+      }
+      reader.readAsDataURL(file);
+    }
+  });
+
+  function removeImage() {
+    document.getElementById('blogImage').value = '';
+    document.getElementById('imagePreview').style.display = 'none';
+  }
+
+  // Form submission
+  document.getElementById('blogForm').addEventListener('submit', function(e) {
+    
+    // Get CKEditor content
+    const blogContent = CKEDITOR.instances.blogDescription.getData();
+    
+    if (!blogContent.trim()) {
+      alert('Please enter blog content');
+      return;
+    }
+    
+        
+  });
+</script>
+{% endblock content %}
